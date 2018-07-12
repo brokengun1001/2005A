@@ -1,0 +1,21 @@
+for i = 1:28
+b = za{i};
+c1 = b(:,1);
+c2 = b(:,2);
+c3 = b(:,3);
+c4 = b(:,4);
+d{1} = corrcoef(c1,c2);
+d{2} = corrcoef(c1,c3);
+d{3} = corrcoef(c1,c4);
+d{4} = corrcoef(c2,c3);
+d{5} = corrcoef(c1,c2);
+d{5} = corrcoef(c2,c4);
+d{6} = corrcoef(c3,c4);
+d1 = d{1}(1,2);
+d2 = d{2}(1,2);
+d3 = d{3}(1,2);
+d4 = d{4}(1,2);
+d5 = d{5}(1,2);
+d6 = d{6}(1,2);
+CORRCOEF{i} = [1, d1, d2, d3;d1,1,d4,d5;d2,d4,1,d6;d3,d5,d6,1];
+end
